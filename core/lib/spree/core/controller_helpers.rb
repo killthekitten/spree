@@ -87,7 +87,7 @@ module Spree
 
       def store_location
         # disallow return to login, logout, signup pages
-        disallowed_urls = ['/user/logout', '/user/sign_in', '/user/sign_up', 'checkout/register']
+        disallowed_urls = ['/user/logout', '/user/sign_in', '/user/sign_up', '/checkout/registration']
         unless disallowed_urls.include?(request.fullpath)
           session['user_return_to'] = request.fullpath.gsub('//', '/')
         end
